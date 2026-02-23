@@ -1,0 +1,992 @@
+<!-- PARTE 1/2 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Esther | Trenzas Africanas en Almagro, Buenos Aires. Servicio profesional en estudio. Trenzas, rulos, estilos africanos y productos para el pelo. Agenda tu turno."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:title" content="Esther | Trenzas Africanas en Almagro" />
+  <meta
+    property="og:description"
+    content="Trenzas africanas, rulos y estilos autenticos en Almagro, CABA. Turnos por WhatsApp y productos para el pelo."
+  />
+  <meta property="og:image" content="https://iili.io/qFelkJt.jpg" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Esther | Trenzas Africanas en Almagro" />
+  <meta
+    name="twitter:description"
+    content="Trenzas africanas, rulos y estilos autenticos en Almagro, CABA. Turnos por WhatsApp y productos para el pelo."
+  />
+  <meta name="twitter:image" content="https://iili.io/qFelkJt.jpg" />
+
+  <title>Esther | Trenzas Africanas en Almagro</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --primary: #111111;
+      --secondary: #6b7280;
+      --accent: #d4a373;
+      --whatsapp: #25d366;
+      --whatsapp-dark: #128c7e;
+      --bg-light: #f9fafb;
+      --white: #ffffff;
+      --alert-bg: #fef2f2;
+      --alert-text: #991b1b;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 2rem;
+      --spacing-lg: 4rem;
+      --border-radius: 12px;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: "Outfit", sans-serif;
+      color: var(--primary);
+      background-color: var(--white);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img, video {
+      max-width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-sm);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:active { transform: scale(0.98); }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp);
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-whatsapp:hover { background-color: var(--whatsapp-dark); }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: var(--spacing-xs);
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--secondary);
+      margin-bottom: var(--spacing-md);
+      font-size: 1rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #f0f0f0;
+      padding: 10px 0;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid #ececec;
+      background: #fff;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+    }
+
+    .logo-text small {
+      display: block;
+      color: var(--secondary);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .nav-cta {
+      padding: 9px 16px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .hero {
+      padding: var(--spacing-lg) 0;
+      text-align: center;
+      background: radial-gradient(circle at 50% 40%, #fff 0%, #f3f4f6 100%);
+    }
+
+    .hero-logo {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 14px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 2px solid rgba(212, 163, 115, 0.25);
+      box-shadow: 0 10px 30px rgba(17, 17, 17, 0.08);
+      background: #fff;
+    }
+
+    .hero h1 {
+      font-size: 2.35rem;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-sm);
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--secondary);
+      margin-bottom: var(--spacing-md);
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .badge {
+      background: var(--white);
+      border: 1px solid #e5e7eb;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge.alert {
+      background: var(--alert-bg);
+      color: var(--alert-text);
+      border-color: #fecaca;
+    }
+
+    .gallery {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .hero h1 { font-size: 2.9rem; }
+      .hero p { font-size: 1.125rem; }
+      .logo-text { font-size: 1.12rem; }
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease;
+      background: #eceff3;
+    }
+
+    .gallery-item:hover { transform: translateY(-4px); }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      inset: auto 0 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.82));
+      color: #fff;
+      padding: 24px 10px 10px;
+    }
+
+    .gallery-caption strong {
+      display: block;
+      font-size: 0.9rem;
+      line-height: 1.1;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .gallery-caption span {
+      display: block;
+      font-size: 0.74rem;
+      line-height: 1.25;
+      opacity: 0.95;
+    }
+
+    .gallery-item.video-card::before {
+      content: "VIDEO";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 2;
+      background: rgba(17,17,17,0.75);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .social-proof {
+      background-color: var(--bg-light);
+      padding: var(--spacing-lg) 0;
+      text-align: center;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .stat-item {
+      min-width: 100px;
+    }
+
+    .stat-item h3 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-item p {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      margin-top: 6px;
+    }
+
+    .products {
+      padding: var(--spacing-lg) 0;
+      background: #fff;
+    }
+
+    .products-note {
+      text-align: center;
+      color: var(--secondary);
+      max-width: 780px;
+      margin: -10px auto 24px;
+      font-size: 0.92rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (min-width: 640px) {
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 980px) {
+      .products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+    }
+
+    .product-card {
+      border: 1px solid #ececec;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-media {
+      aspect-ratio: 16 / 10;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(212,163,115,0.26), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(17,17,17,0.06), transparent 35%),
+        linear-gradient(135deg, #f7f7f7, #efefef);
+      display: grid;
+      place-items: center;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .product-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #fff;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+      font-size: 0.72rem;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-weight: 600;
+    }
+
+    .product-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .product-body h3 {
+      font-size: 1rem;
+      line-height: 1.2;
+      letter-spacing: -0.2px;
+    }
+
+    .product-body p {
+      color: var(--secondary);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    .product-meta {
+      font-size: 0.8rem;
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    .product-btn {
+      width: 100%;
+      margin-top: auto;
+      padding: 11px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+
+    .faq { padding: var(--spacing-lg) 0; }
+
+    .accordion-item {
+      border-bottom: 1px solid #e5e7eb;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .accordion-header {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 1.1rem 0;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      font-size: 1.1rem;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      color: var(--secondary);
+    }
+
+    .accordion-content p { padding-bottom: 1.15rem; }
+
+    .accordion-item.active .icon { transform: rotate(45deg); }
+
+    .cta-final {
+      padding: 10px 0 var(--spacing-lg);
+    }
+
+    .cta-box {
+      background: linear-gradient(180deg, #111111, #1b1b1b);
+      color: #fff;
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(17,17,17,0.12);
+    }
+
+    .cta-box h3 {
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.4px;
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background: var(--primary);
+      color: #9ca3af;
+      padding: var(--spacing-lg) 0 calc(var(--spacing-md) + 78px);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .footer-link {
+      color: var(--white);
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: inline-block;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .float-wa {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      width: 58px;
+      height: 58px;
+      background-color: var(--whatsapp);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+      z-index: 1000;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.08);
+      background-color: var(--whatsapp-dark);
+    }
+
+    .float-wa svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+    }
+
+    @media (max-width: 460px) {
+      .nav-cta {
+        padding: 8px 12px;
+        font-size: 0.82rem;
+      }
+      .logo-text small {
+        display: none;
+      }
+      .hero {
+        padding: 2.8rem 0;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-content">
+      <div class="logo-wrap">
+        <img
+          class="logo-img"
+          src="https://iili.io/qFelkJt.jpg"
+          alt="Logo Esther Trenzas Africanas"
+          loading="eager"
+        />
+        <div class="logo-text">
+          ESTHER | TRENZAS
+          <small>Trenzas Africanas en Almagro</small>
+        </div>
+      </div>
+      <a href="https://wa.me/message/QT6ZNAYA2QQ7H1" class="btn btn-primary nav-cta">Reservar</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badges">
+        <div class="badge">📍 Almagro, CABA</div>
+        <div class="badge alert">❌ No voy a domicilio</div>
+        <div class="badge">🇦🇷 Argentina</div>
+      </div>
+
+      <img class="hero-logo" src="https://iili.io/qFelkJt.jpg" alt="Logo Esther Trenzas" loading="lazy" />
+
+      <h1>Trenzas Africanas<br />Autenticas</h1>
+      <p>
+        Especialista en trenzas, rulos y estilos africanos. Calidad profesional en estudio privado,
+        atencion personalizada y turnos por WhatsApp.
+      </p>
+
+      <a href="https://wa.me/message/QT6ZNAYA2QQ7H1" class="btn btn-whatsapp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.304-5.235c0-5.421 4.409-9.85 9.854-9.85 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.42-4.413 9.85-9.855 9.85" />
+        </svg>
+        Agendar turno
+      </a>
+      <p style="font-size:0.82rem; margin-top:10px; opacity:0.75;">Respuesta rapida por WhatsApp</p>
+    </div>
+  </section>
+
+  <section class="gallery" id="trabajos">
+    <div class="container">
+      <h2 class="section-title">Resultados Reales</h2>
+      <p class="section-subtitle">Trabajos, estilos y video de demostracion</p>
+
+      <div class="grid">
+        <div class="gallery-item">
+          <img src="https://iili.io/qFertv1.jpg" alt="Trenzas africanas estilo 1" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Estilo personalizado</strong>
+            <span>Terminacion prolija y diseño adaptado al look de la clienta.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://iili.io/qFerpja.jpg" alt="Trenzas africanas estilo 2" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Box braids clasicas</strong>
+            <span>Trenzado limpio y duradero, ideal para uso diario.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://iili.io/qFerDyF.jpg" alt="Trenzas africanas estilo 3" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Diseño con presencia</strong>
+            <span>Trabajo pensado para resaltar volumen, forma y estilo.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://iili.io/qFermTg.jpg" alt="Trenzas africanas estilo 4" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Acabado profesional</strong>
+            <span>Detalles cuidados para un resultado comodo y prolijo.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://iili.io/qFeryZJ.jpg" alt="Trenzas africanas estilo 5" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Trenzas con estilo</strong>
+            <span>Diseño estetico con buena estructura y definicion.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://iili.io/qFe4HCv.jpg" alt="Trenzas africanas estilo 6" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Look autentico</strong>
+            <span>Ideal para quienes buscan un estilo afro bien trabajado.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://iili.io/qFe4JGR.jpg" alt="Trenzas africanas estilo 7" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Diseño a medida</strong>
+            <span>Se adapta al largo, volumen y preferencia de cada clienta.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://iili.io/qFe433N.jpg" alt="Trenzas africanas estilo 8" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Terminacion limpia</strong>
+            <span>Trabajo prolijo con atencion en cada detalle del peinado.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://iili.io/qFe4Kvt.jpg" alt="Trenzas africanas estilo 9" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Estilo duradero</strong>
+            <span>Comodo para varios dias con buen mantenimiento.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://iili.io/qFe4fyX.jpg" alt="Trenzas africanas estilo 10" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Trabajo real</strong>
+            <span>Ejemplo de resultado final con forma y volumen definidos.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://iili.io/qFe4Bun.jpg" alt="Trenzas africanas estilo 11" loading="lazy" />
+          <div class="gallery-caption">
+            <strong>Detalle y estetica</strong>
+            <span>Diseño con presencia visual y acabados prolijos.</span>
+          </div>
+        </div>
+
+        <div class="gallery-item video-card">
+          <video
+            src="https://xgeeqsobmfrimdqfbsye.supabase.co/storage/v1/object/public/Transs/trenzas%20africanas.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-label="Video demostracion de trenzas africanas"
+          ></video>
+          <div class="gallery-caption">
+            <strong>Video de demostracion</strong>
+            <span>Vista real del trabajo y movimiento del peinado (sin sonido).</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: var(--spacing-md);">
+        <a
+          href="https://instagram.com/trenzasesther"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="text-decoration: underline; font-weight: 600;"
+        >Ver mas en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-proof">
+    <div class="container">
+      <div class="stats">
+        <div class="stat-item">
+          <h3>Turnos</h3>
+          <p>Por WhatsApp</p>
+        </div>
+        <div class="stat-item">
+          <h3>100%</h3>
+          <p>Atencion en estudio</p>
+        </div>
+        <div class="stat-item">
+          <h3>+Info</h3>
+          <p>Consultas rapidas</p>
+        </div>
+      </div>
+      <p>
+        Atencion personalizada en Almagro. Consulta tu estilo, disponibilidad y materiales por WhatsApp.
+      </p>
+    </div>
+  </section>
+
+  <section class="products" id="productos">
+    <div class="container">
+      <h2 class="section-title">Pelo y accesorios para trenzas</h2>
+      <p class="section-subtitle">Catalogo demo para mostrar productos disponibles</p>
+      <p class="products-note">
+        Productos sujetos a disponibilidad. Consultar colores, stock y precios por WhatsApp.
+      </p>
+
+      <div class="products-grid">
+        <article class="product-card">
+          <div class="product-media">
+            <span class="product-icon" aria-hidden="true">🧵</span>
+            <span class="product-badge">Por pedido</span>
+          </div>
+          <div class="product-body">
+            <h3>Canecalon Jumbo (Negro)</h3>
+            <p>Ideal para box braids y estilos largos. Textura comoda y buena terminacion.</p>
+            <div class="product-meta">Consultar stock y largo disponible</div>
+            <a class="btn btn-whatsapp product-btn" href="https://wa.me/message/QT6ZNAYA2QQ7H1">Consultar por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <span class="product-icon" aria-hidden="true">🎨</span>
+            <span class="product-badge">Colores</span>
+          </div>
+          <div class="product-body">
+            <h3>Canecalon Jumbo (Colores)</h3>
+            <p>Variedad de tonos para diseños personalizados y combinaciones creativas.</p>
+            <div class="product-meta">Consultar colores disponibles</div>
+            <a class="btn btn-whatsapp product-btn" href="https://wa.me/message/QT6ZNAYA2QQ7H1">Consultar por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <span class="product-icon" aria-hidden="true">〰️</span>
+            <span class="product-badge">Disponible</span>
+          </div>
+          <div class="product-body">
+            <h3>Pelo ondulado para trenzas</h3>
+            <p>Ideal para acabados con rulos y estilos con mas movimiento.</p>
+            <div class="product-meta">Consultar largo y textura</div>
+            <a class="btn btn-whatsapp product-btn" href="https://wa.me/message/QT6ZNAYA2QQ7H1">Consultar por WhatsApp</a>
+          </div>
+        </article>
+        <!-- PARTE 2/2 -->
+        <article class="product-card">
+          <div class="product-media">
+            <span class="product-icon" aria-hidden="true">✨</span>
+            <span class="product-badge">Stock limitado</span>
+          </div>
+          <div class="product-body">
+            <h3>Argollitas y accesorios para trenzas</h3>
+            <p>Detalles decorativos para personalizar el look y darle mas estilo.</p>
+            <div class="product-meta">Consultar modelos disponibles</div>
+            <a class="btn btn-whatsapp product-btn" href="https://wa.me/message/QT6ZNAYA2QQ7H1">Consultar por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <span class="product-icon" aria-hidden="true">🫧</span>
+            <span class="product-badge">Cuidado</span>
+          </div>
+          <div class="product-body">
+            <h3>Mousse fijadora para trenzas</h3>
+            <p>Ayuda a mantener prolijidad, definicion y mejor acabado del peinado.</p>
+            <div class="product-meta">Consultar marcas y presentaciones</div>
+            <a class="btn btn-whatsapp product-btn" href="https://wa.me/message/QT6ZNAYA2QQ7H1">Consultar por WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <span class="product-icon" aria-hidden="true">🧴</span>
+            <span class="product-badge">Cuidado</span>
+          </div>
+          <div class="product-body">
+            <h3>Aceite para cuero cabelludo</h3>
+            <p>Hidratacion y cuidado durante el uso de trenzas para mayor comodidad.</p>
+            <div class="product-meta">Consultar stock disponible</div>
+            <a class="btn btn-whatsapp product-btn" href="https://wa.me/message/QT6ZNAYA2QQ7H1">Consultar por WhatsApp</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="preguntas">
+    <div class="container">
+      <h2 class="section-title">Dudas frecuentes</h2>
+
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span>¿Vas a domicilio?</span>
+          <span class="icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>
+            No, realizo todos los trabajos exclusivamente en mi espacio en Almagro, CABA,
+            donde cuento con las herramientas necesarias para trabajar comoda y profesionalmente.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span>¿Incluye el pelo/materiales?</span>
+          <span class="icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>
+            Depende del estilo que quieras. Consultame por WhatsApp con una foto de referencia
+            y te paso presupuesto exacto con o sin materiales.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span>¿Como reservo un turno?</span>
+          <span class="icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>
+            Se reserva con seña previa para congelar el turno. La coordinacion se realiza por WhatsApp.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header" type="button" aria-expanded="false">
+          <span>¿Tambien vendes productos para el pelo?</span>
+          <span class="icon" aria-hidden="true">+</span>
+        </button>
+        <div class="accordion-content">
+          <p>
+            Si, consultame por canecalon, accesorios y productos de cuidado para trenzas.
+            La disponibilidad puede variar segun stock y colores.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <div class="cta-box">
+        <h3>¿Queres tu turno o consultar productos?</h3>
+        <p>Escribime por WhatsApp y te respondo disponibilidad, estilos y materiales.</p>
+        <a href="https://wa.me/message/QT6ZNAYA2QQ7H1" class="btn btn-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.304-5.235c0-5.421 4.409-9.85 9.854-9.85 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.42-4.413 9.85-9.855 9.85" />
+          </svg>
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="margin-bottom:10px; color:#fff; font-weight:700;">ESTHER | TRENZAS AFRICANAS</p>
+      <p>Almagro, Ciudad Autonoma de Buenos Aires</p>
+      <a
+        href="https://instagram.com/trenzasesther"
+        class="footer-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="margin-top: 15px;"
+      >Seguime en Instagram</a>
+      <p style="font-size:0.75rem; margin-top:20px; opacity:0.6;">&copy; 2026. Todos los derechos reservados.</p>
+      <p style="font-size:0.75rem; margin-top:8px; opacity:0.7;">
+        Creado y diseñado por <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:underline;">Ciborg 347</a>
+      </p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/message/QT6ZNAYA2QQ7H1" class="float-wa" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.304-5.235c0-5.421 4.409-9.85 9.854-9.85 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.42-4.413 9.85-9.855 9.85" />
+    </svg>
+  </a>
+
+  <script>
+    const accordions = document.querySelectorAll(".accordion-header");
+
+    accordions.forEach((acc) => {
+      acc.addEventListener("click", function () {
+        const item = this.parentElement;
+        const panel = this.nextElementSibling;
+        const isActive = item.classList.contains("active");
+
+        item.classList.toggle("active");
+        this.setAttribute("aria-expanded", String(!isActive));
+
+        if (isActive) {
+          panel.style.maxHeight = null;
+          this.querySelector(".icon").textContent = "+";
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          this.querySelector(".icon").textContent = "−";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
